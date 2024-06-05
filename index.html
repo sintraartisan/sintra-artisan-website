@@ -76,6 +76,19 @@
             display: block;
             margin: 20px auto; /* Center image and add space around */
         }
+        /* New styles for image container */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Adjust the space between images */
+            margin: 20px 0;
+        }
+        .service-image {
+            flex: 0 1 calc(25% - 20px); /* Adjust width minus the gap */
+            max-width: 100%; /* Ensures image is responsive */
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -86,11 +99,13 @@
         <button class="theme-button" onclick="setTheme('default')">Default Theme</button>
         <button class="theme-button" onclick="setTheme('dark')">Dark Theme</button>
     </header>
-    <!-- Images for visual appearance -->
-    <img class="service-image" src="images/9b0f2702-0bf8-4067-9709-181c8b52007b.webp" alt="Digital Printing Service 1">
-    <img class="service-image" src="images/50ef0c60-42db-44f4-99d2-6b70c05972d4.webp" alt="Digital Printing Service 2">
-    <img class="service-image" src="images/15f58aa4-3065-43a3-b4e6-9905f44a7f43.webp" alt="Digital Printing Service 3">
-    <img class="service-image" src="images/870d5253-5fb9-4d5c-aac4-225463615f4a.webp" alt="Digital Printing Service 4">
+        <!-- Image container to hold all images -->
+        <div class="image-container">
+            <img class="service-image" src="images/9b0f2702-0bf8-4067-9709-181c8b52007b.webp" alt="Digital Printing Service 1">
+            <img class="service-image" src="images/50ef0c60-42db-44f4-99d2-6b70c05972d4.webp" alt="Digital Printing Service 2">
+            <img class="service-image" src="images/15f58aa4-3065-43a3-b4e6-9905f44a7f43.webp" alt="Digital Printing Service 3">
+            <img class="service-image" src="images/870d5253-5fb9-4d5c-aac4-225463615f4a.webp" alt="Digital Printing Service 4">
+        </div>
     <nav>
         <a href="#printing">Document Printing</a>
         <a href="#proofreading">Proofreading</a>
