@@ -60,17 +60,36 @@
             border-radius: 5px;
             box-shadow: var(--content-shadow);
         }
+                /* Button styling */
+                .theme-button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Sintra Artisan</h1>
         <p>Digital Printing Services</p>
-        <!-- Theme switcher button -->
-        <button onclick="toggleTheme()">Switch Theme</button>
+        <!-- Theme switcher buttons -->
+        <button class="theme-button" onclick="setTheme('default')">Default Theme</button>
+        <button class="theme-button" onclick="setTheme('dark')">Dark Theme</button>
     </header>
     <nav>
         <a href="#printing">Document Printing</a>
+        <a href="#proofreading">Proofreading</a>
+        <a href="#research">Studies Research Assistant</a>
+        <a href="#online-docs">Online Document Assistant</a>
+        <a href="#photo-editing">Photo Editing</a>
+        <a href="#video-editing">Video Editing</a>
+        <a href="#media-download">Media Downloading</a>
+        <a href="#resume">Professional Resume Making</a>
+        <a href="#application-letter">Application Letter Making</a>
+        <a href="#cover-letter">Cover Letter Making</a>
+        <a href="#portfolio">Portfolio Making</a>
         <!-- ... other links ... -->
     </nav>
     <div class="content">
@@ -82,10 +101,14 @@
         <!-- ... other sections ... -->
     </div>
     <script>
-        // Function to toggle the theme
-        function toggleTheme() {
+        // Function to set the theme
+        function setTheme(themeName) {
             var body = document.body;
-            body.classList.toggle('dark-theme');
+            if (themeName === 'dark') {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
         }
     </script>
 </body>
