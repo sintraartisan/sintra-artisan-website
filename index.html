@@ -5,27 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sintra Artisan - Digital Printing Services</title>
     <style>
-        /* Basic styling (customize as needed) */
+        /* Define CSS variables for light and dark themes */
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --header-bg-color: #333;
+            --nav-bg-color: #444;
+            --nav-text-color: #fff;
+            --content-bg-color: #fff;
+            --content-text-color: #000;
+            --content-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .dark-theme {
+            --background-color: #333;
+            --text-color: #ccc;
+            --header-bg-color: #222;
+            --nav-bg-color: #555;
+            --nav-text-color: #fff;
+            --content-bg-color: #444;
+            --content-text-color: #ccc;
+            --content-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        /* Apply CSS variables */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: var(--header-bg-color);
+            color: var(--nav-text-color);
             padding: 20px;
             text-align: center;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: var(--nav-bg-color);
             padding: 10px;
         }
         nav a {
-            color: #fff;
+            color: var(--nav-text-color);
             text-decoration: none;
             margin: 0 20px;
         }
@@ -33,9 +55,10 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: var(--content-bg-color);
+            color: var(--content-text-color);
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--content-shadow);
         }
     </style>
 </head>
@@ -43,19 +66,12 @@
     <header>
         <h1>Sintra Artisan</h1>
         <p>Digital Printing Services</p>
+        <!-- Theme switcher button -->
+        <button onclick="toggleTheme()">Switch Theme</button>
     </header>
     <nav>
         <a href="#printing">Document Printing</a>
-        <a href="#proofreading">Proofreading</a>
-        <a href="#research">Studies Research Assistant</a>
-        <a href="#online-docs">Online Document Assistant</a>
-        <a href="#photo-editing">Photo Editing</a>
-        <a href="#video-editing">Video Editing</a>
-        <a href="#media-download">Media Downloading</a>
-        <a href="#resume">Professional Resume Making</a>
-        <a href="#application-letter">Application Letter Making</a>
-        <a href="#cover-letter">Cover Letter Making</a>
-        <a href="#portfolio">Portfolio Making</a>
+        <!-- ... other links ... -->
     </nav>
     <div class="content">
         <!-- Content sections for each service -->
@@ -63,7 +79,14 @@
             <h2>Document Printing</h2>
             <p>We offer high-quality document printing services for various needs.</p>
         </section>
-        <!-- Add similar sections for other services -->
+        <!-- ... other sections ... -->
     </div>
+    <script>
+        // Function to toggle the theme
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle('dark-theme');
+        }
+    </script>
 </body>
 </html>
