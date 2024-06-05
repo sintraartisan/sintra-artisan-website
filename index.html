@@ -71,27 +71,18 @@
         /* New styles for image container */
         .image-container {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 20px; /* Adjust the space between images */
             margin: 20px 0;
         }
-    @media (max-width: 1200px) {
-        .service-image {
-            flex: 0 1 calc(33.33% - 20px); /* 3 images per row */
-        }
-    }
 
-    @media (max-width: 900px) {
         .service-image {
-            flex: 0 1 calc(50% - 20px); /* 2 images per row */
+            flex: 1; /* Equal distribution of available space */
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center image and add space around */
         }
-    }
-
-    @media (max-width: 600px) {
-        .service-image {
-            flex: 0 1 calc(100% - 20px); /* 1 image per row */
-        }
-    }
     </style>
 </head>
 <body>
