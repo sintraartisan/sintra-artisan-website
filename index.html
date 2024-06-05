@@ -73,15 +73,13 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px; /* Adjust the space between images */
+            gap: 20px;
             margin: 20px 0;
         }
-
         .service-image {
-            flex: 1; /* Equal distribution of available space */
+            flex: 0 1 calc(25% - 20px); /* Adjust width to fit 4 images in a row */
             height: auto;
-            display: block;
-            margin: 20px auto; /* Center image and add space around */
+            margin: 0; /* Remove margin to use gap for spacing */
         }
     </style>
 </head>
