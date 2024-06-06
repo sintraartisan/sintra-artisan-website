@@ -104,6 +104,19 @@
         <!-- Theme switcher buttons -->
         <button class="theme-button" onclick="setTheme('default')">Default Theme</button>
         <button class="theme-button" onclick="setTheme('dark')">Dark Theme</button>
+        <!-- Language selector -->
+        <select id="language-selector" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <!-- Add more languages as needed -->
+        </select>
+        <!-- Sign-in form -->
+        <form id="sign-in-form" onsubmit="signIn(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
     </header>
         <!-- Image container to hold all images -->
         <div class="image-container">
@@ -142,6 +155,20 @@
             } else {
                 body.classList.remove('dark-theme');
             }
+        // Function to change language
+                function changeLanguage(language) {
+            // Logic to change the language of the website
+            console.log('Language changed to:', language);
+            // You will need to implement the actual language change logic
+            }
+        // Function to handle sign-in
+        function signIn(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            console.log('User signed in:', username);
+            // Implement your sign-in logic here
+            }    
         }
     </script>
 </body>
