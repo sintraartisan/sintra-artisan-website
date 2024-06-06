@@ -99,18 +99,21 @@
 </head>
 <body>
     <header>
-        <h1>Sintra Artisan</h1>
+        <!-- Clickable title -->
+        <a href="/" style="text-decoration: none; color: inherit;">
+            <h1>Sintra Artisan</h1>
+        </a>
         <p>Digital Printing Services</p>
         <!-- Theme switcher buttons -->
         <button class="theme-button" onclick="setTheme('default')">Default Theme</button>
         <button class="theme-button" onclick="setTheme('dark')">Dark Theme</button>
-        <!-- Language selector -->
-        <select id="language-selector" onchange="changeLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <!-- Add more languages as needed -->
-        </select>
+    <!-- Language selector -->
+    <select id="language-selector" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <!-- Add more languages as needed -->
+    </select>
         <!-- Sign-in form -->
         <form id="sign-in-form" onsubmit="signIn(event)">
             <input type="text" id="username" placeholder="Username" required>
@@ -139,10 +142,11 @@
         <a href="#portfolio">Portfolio Making</a>
     </nav>
     <div class="content">
-        <!-- Content sections for each service -->
-        <section id="printing">
-            <h2>Document Printing</h2>
-            <p>We offer high-quality document printing services for various needs.</p>
+    <!-- Content sections with language-specific classes -->
+    <div class="content">
+        <section id="printing" class="lang">
+            <h2 class="lang-title">Document Printing</h2>
+            <p class="lang-desc">We offer high-quality document printing services for various needs.</p>
         </section>
         <!-- Add similar sections for other services -->
     </div>
@@ -155,12 +159,6 @@
             } else {
                 body.classList.remove('dark-theme');
             }
-        // Function to change language
-                function changeLanguage(language) {
-            // Logic to change the language of the website
-            console.log('Language changed to:', language);
-            // You will need to implement the actual language change logic
-            }
         // Function to handle sign-in
         function signIn(event) {
             event.preventDefault();
@@ -168,8 +166,37 @@
             var password = document.getElementById('password').value;
             console.log('User signed in:', username);
             // Implement your sign-in logic here
-            }    
-        }
+            }  
+        // Function to change language
+        function changeLanguage(language) {
+            // Define translations for each section
+            var translations = {
+                'en': {
+                    'title': 'Document Printing',
+                    'desc': 'We offer high-quality document printing services for various needs.'
+                },
+                'es': {
+                    'title': 'Impresión de Documentos',
+                    'desc': 'Ofrecemos servicios de impresión de documentos de alta calidad para diversas necesidades.'
+                },
+                'fr': {
+                    'title': 'Impression de Documents',
+                    'desc': 'Nous offrons des services d\'impression de documents de haute qualité pour divers besoins.'
+                }
+                // Add more translations as needed
+            };
+
+            // Update the content based on the selected language
+            var langElements = document.querySelectorAll('.lang');
+            langElements.forEach(function(elem) {
+                var title = elem.querySelector('.lang-title');
+                var desc = elem.querySelector('.lang-desc');
+                if(title && desc) {
+                    title.textContent = translations[language]['title'];
+                    desc.textContent = translations[language]['desc'];
+                }
+            });
+        }  
     </script>
 </body>
 </html>
